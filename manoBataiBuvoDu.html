@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-color: bisque;
+        }
+        .main-btn-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 85px 85px;
+        }
+        .btn {
+            min-height: 80px;
+            min-width: 80px;
+            border: none;
+            border-radius: 5px;
+        }
+        .first {
+            background-color: rgb(164, 95, 228);
+        }
+        .second {
+            background-color: rgb(68, 223, 223);
+        }
+        .third {
+            background-color: rgb(104, 209, 90);
+        }
+        .fourth {
+            background-color: rgb(243, 95, 125);
+        }
+        .btn:hover {
+            background-color: rgb(199, 199, 199, .3);
+        }
+    </style>
+    
+</head>
+<body id="body" style="">
+    <div class="main-btn-container">
+        <div class="container">
+            <button id="1st" onclick="Choice(this);" class="first btn"></button>
+            <button id="2nd" onclick="Choice(this);" class="second btn"></button>
+            <button id="3rd" onclick="Choice(this);" class="third btn"></button>
+            <button id="4th" onclick="Choice(this);" class="fourth  btn"></button>
+        </div>
+    </div>
+
+    <script>
+        function Choice(elem) {
+            var bckgrnd = document.getElementById('body');
+            
+            if (elem.id == "1st") {
+                bckgrnd.style.backgroundColor = "orchid";
+            } else if (elem.id == "2nd") {
+                bckgrnd.style.backgroundColor = "electric blue";
+            } else if (elem.id == "3rd") {
+                bckgrnd.style.backgroundColor = "mint green";
+            } else if (elem.id == "4th") {
+                bckgrnd.style.backgroundColor = "pastel red";
+            }
+            console.log("hi");
+        };
+
+    </script>
+</body>
+</html>

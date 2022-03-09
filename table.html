@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Table</title>
+    <style>
+        table, th {
+            border: 2px solid grey;
+            padding: 5px;
+            margin-top: 20px;
+        }
+        .table-title {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function addTable() {
+            addLineToHTMLTable('Jonas', '56');
+            addLineToHTMLTable('Ona', '65');
+            addLineToHTMLTable('Tadas', '30');
+            addLineToHTMLTable('Agnė', '21');
+        }
+        function addLineToHTMLTable(name, age) {
+            var tableBody = document.querySelector('#tableDataBody');
+            var newRow = tableBody.insertRow();
+            var nameCell = newRow.insertCell();
+            nameCell.innerHTML = name;
+            var ageCell = newRow.insertCell();
+            ageCell.innerHTML = age;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="addTable();">Click To Add Table</button>
+    <table>
+        <thead class="table-title">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tableDataBody"></tbody>
+    </table>
+</body>
+</html>
