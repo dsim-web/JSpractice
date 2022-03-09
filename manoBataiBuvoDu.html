@@ -1,75 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {box-sizing: border-box;}
+        @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
         body {
-            background-color: bisque;
+            background-color: rgb(156, 217, 241);
+            font-family: 'Redressed', cursive;
+            text-align: center;
+            color: rgb(0, 0, 0);
         }
-        .main-btn-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        h1 {
+            font-size: 2em;
+            color: rgb(17, 14, 14);
         }
-        .container {
-            display: grid;
-            grid-template-columns: 85px 85px;
+        .div-color {
+            background-color: rgb(216, 113, 241);
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 20px;
+            max-width: 400px;
         }
-        .btn {
-            min-height: 80px;
-            min-width: 80px;
+        p {
+            font-size: 1.4em;
+        }
+        .button {
+            font-size: 1.5em;
+            border-radius: 10px;
             border: none;
-            border-radius: 5px;
+            padding: 0.2em;
+            margin: 0.2em;
         }
-        .first {
-            background-color: rgb(164, 95, 228);
+        #yellow-btn:hover {
+            background-color: rgb(250, 248, 153);
         }
-        .second {
-            background-color: rgb(68, 223, 223);
+        #red-btn:hover {
+            background-color: rgb(233, 120, 120);
         }
-        .third {
-            background-color: rgb(104, 209, 90);
-        }
-        .fourth {
-            background-color: rgb(243, 95, 125);
-        }
-        .btn:hover {
-            background-color: rgb(199, 199, 199, .3);
+        .hide {
+            display: none;
         }
     </style>
     
 </head>
-<body id="body" style="">
-    <div class="main-btn-container">
-        <div class="container">
-            <button id="1st" onclick="Choice(this);" class="first btn"></button>
-            <button id="2nd" onclick="Choice(this);" class="second btn"></button>
-            <button id="3rd" onclick="Choice(this);" class="third btn"></button>
-            <button id="4th" onclick="Choice(this);" class="fourth  btn"></button>
-        </div>
+<body id="body-color">
+    <div class="div-color" id="div-color">
+        <h1>Mano batai buvo du</h1>
+        <p>Mano batai buvo du<br>
+        Vienas dingo - nerandu<br>
+        Aš su vienu batuku<br>
+        Niekur eiti negaliu!<br>
+        <br>
+        Dvi rankytės ieško bato,<br>
+        Dvi rankytės jį pamato!<br>
+        Apsiausiu batukus<br>
+        Ir keliausiu pas vaikus!<br>
+        </p>
     </div>
+    <button class="button" onclick="changeColorYellow();" id="yellow-btn">Geltona</button>
+    <button class="button" onclick="changeColorRed();" id="red-btn">Raudona</button>
 
     <script>
-        function Choice(elem) {
-            var bckgrnd = document.getElementById('body');
-            
-            if (elem.id == "1st") {
-                bckgrnd.style.backgroundColor = "orchid";
-            } else if (elem.id == "2nd") {
-                bckgrnd.style.backgroundColor = "electric blue";
-            } else if (elem.id == "3rd") {
-                bckgrnd.style.backgroundColor = "mint green";
-            } else if (elem.id == "4th") {
-                bckgrnd.style.backgroundColor = "pastel red";
-            }
-            console.log("hi");
-        };
+        var divColor = document.getElementById('div-color');
+        var body = document.getElementById('body-color');
+        var btnYellow = document.getElementById('yellow-btn');
+        var btnRed = document.getElementById('red-btn');
 
+        function changeColorYellow() {
+            divColor.style.backgroundColor = "rgb(255, 204, 102)";
+            body.style.backgroundColor = "rgb(255, 255, 204)";
+            btnYellow.classList.add('hide');
+            btnRed.classList.remove('hide');
+        }
+
+        function changeColorRed() {
+            divColor.style.backgroundColor = "rgb(233, 120, 120)";
+            body.style.backgroundColor = "rgb(255, 204, 255)";
+            btnRed.classList.add('hide');
+            btnYellow.classList.remove('hide');
+        }
     </script>
 </body>
 </html>
